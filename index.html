@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 2nd Anniversary, Byy! 🌸✨</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- File CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-[#FFF0F5] text-black flex items-center justify-center p-4 relative overflow-x-hidden selection:bg-[#FF69B4] selection:text-white">
+
+  <!-- Background Floating Particles -->
+  <div id="particle-container" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+  <!-- Background Music -->
+<audio id="bgm" src="audio.mp3" loop preload="auto"></audio>
+
+  <!-- FASE 1: AMPLOP SURAT DENGAN ANIMASI BUKA FLAP -->
+  <div id="envelope-wrapper" class="relative z-10 flex flex-col items-center justify-center cursor-pointer group">
+    <div class="mb-5 text-center">
+      <span class="inline-block border-2 border-black bg-[#FF69B4] text-white px-3 py-1 rounded-full text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] animate-pulse">
+        Special Delivery For Dian Indah Febriani 💌
+      </span>
+      <h1 class="text-xl md:text-2xl font-black uppercase tracking-tight mt-2 text-gray-900">
+        Ada Surat Dari Kevv!
+      </h1>
+      <p class="text-xs font-bold text-gray-500 mt-0.5">
+        (Klik amplop pink di bawah buat buka suratnya)
+      </p>
+    </div>
+
+    <!-- Kotak Amplop -->
+    <div id="envelope" onclick="openEnvelope()" class="envelope">
+      <div class="envelope-back"></div>
+      <div id="envelope-letter-preview" class="envelope-paper-preview">
+        <div class="text-[10px] font-black text-pink-500 uppercase tracking-wider text-center">2nd Month Anniversary</div>
+        <div class="w-full h-1 bg-pink-200 rounded mt-1"></div>
+        <div class="w-3/4 h-1 bg-pink-200 rounded mt-1"></div>
+      </div>
+      <div class="envelope-pocket"></div>
+      <div id="envelope-flap" class="envelope-flap"></div>
+      <div id="envelope-seal" class="envelope-seal">💖</div>
+    </div>
+  </div>
+
+  <!-- FASE 2: KARTU SURAT BESAR DENGAN PESAN LENGKAP (Awalnya Tersembunyi) -->
+  <main id="letter-modal" class="hidden w-full max-w-lg bg-white border-4 border-black p-6 md:p-8 rounded-3xl shadow-[8px_8px_0px_0px_#000] relative z-20 my-8 opacity-0 transform translate-y-6 transition-all duration-500">
+    
+    <!-- Header Surat -->
+    <header class="border-b-4 border-black pb-4 text-center space-y-2">
+      <div class="inline-block border-2 border-black bg-[#FF69B4] text-white px-3 py-0.5 rounded-full text-[10px] font-black uppercase shadow-[2px_2px_0px_0px_#000]">
+        Official 2nd Month Letter 🌸
+      </div>
+      <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-gray-900 leading-tight">
+        Happy 2 Months, Byy Cantik!
+      </h2>
+      <div class="text-[11px] font-bold text-gray-500 bg-[#FFE4E1] border-2 border-black inline-block px-2.5 py-0.5 rounded-lg">
+        10 September 2026 – 10 November 2026
+      </div>
+    </header>
+
+    <!-- Isi Longtext Anniversary -->
+    <article class="my-5 space-y-3.5 text-xs font-bold leading-relaxed text-gray-800 text-left bg-[#FFF8DC] border-2 border-black p-4 md:p-5 rounded-2xl shadow-[3px_3px_0px_0px_#000] max-h-[380px] overflow-y-auto pr-2 custom-scrollbar">
+      <p>
+        happy 2nd month anniversary yaa byy cantikku.. ga kerasa yaa kita udah lewatin dua bulan bareng bareng semenjak kelar kkn dan mutusin buat jalanin hubungan ini berdua.. dari awalnya yang seru di posko, terus kita belajar saling ngertiin satu sama lain di luar, sampai sekarang.. aku bener bener bersyukur bangett dan berterima kasih banget punya kamu di hidupku byy.. makasih yaa udah mau nerima segala kekuranganku, sabar nemenin aku yang kadang keras kepala atau lelet ini, dan tetep milih bertahan buat jalan bareng aku sampai hari ini 🥺🤍✨
+      </p>
+
+      <p>
+        aku tau perjalanan dua bulan ini ga selalu mulus dan ada aja dramanya.. kita pernah salah paham, pernah capek bareng, bahkan sempat sama sama emosi atau overthinking.. tapi dari semua gesekan itu, aku justru makin sadar kalau aku ga mau kehilangan kamu byy.. setiap kali liat kamu senyum, ketawa bareng waktu di rumah mamah kemarin, atau liat kamu manja pas kita lagi bareng, itu selalu bikin rasa capekku langsung hilang dan bikin aku makin yakin kalau pilihanku ke kamu tuh ga pernah salah 🌸🥰
+      </p>
+
+      <p>
+        di dua bulan ini aku pengen minta maaf juga yaa byy kalau sikapku kadang masih bikin kamu kesel atau ngerasa ga nyaman.. aku masih terus berproses dan belajar buat jadi pasangan yang lebih dewasa, lebih peka, dan bisa jadi tempat pulang yang bikin kamu selalu ngerasa aman tanpa rasa takut.. kamu tuh berharga banget buat aku byy, dan apa pun kerja keras yang lagi aku kejar sekarang, itu semua ada nama kamu di masa depanku nanti 💍🤍
+      </p>
+
+      <p>
+        makasih banyak yaa sayangkuu cintakuu buat 2 bulan yang luar biasa manis dan berharga ini.. tetep sama akuu yaa byy, jangan bosen buat saling ngingetin, saling support, dan tumbuh bareng.. semoga langkah kita ke depannya selalu dipermudah dan hubungan kita makin erat sampai ke tujuan yang kita impikan nanti.. i love you more than words can say, happy 2 months anniversary byy manisku sayangg! 💖🫶🏻🥰
+      </p>
+    </article>
+
+    <!-- Interactive Certificate Box (Neubrutalism Monospace) -->
+    <div class="bg-[#FFE4E1] border-2 border-dashed border-black p-3.5 rounded-2xl text-left font-mono-custom text-[11px] text-gray-900 shadow-inner leading-relaxed space-y-1 mb-5">
+      <div class="text-center font-black border-b border-black/30 pb-1 text-[#FF1493]">
+        === SERTIFIKAT RESMI PERJALANAN ===
+      </div>
+      <div class="pt-1"><span class="font-bold">Pasangan :</span> Kevv ❤️ Fefee</div>
+      <div><span class="font-bold">Status   :</span> Caling Cayang Mwah ^^</div>
+      <div><span class="font-bold">Masa     :</span> Sah Berlaku Selamanya ♾️</div>
+    </div>
+    <!-- 
+        Tombol Kirim Balasan ke WhatsApp
+        <button onclick="sendReplyToWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#1faa53] text-white border-3 border-black py-3.5 px-4 rounded-2xl font-black text-xs uppercase shadow-[4px_4px_0px_0px_#000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_0px_#000] transition-all cursor-pointer flex items-center justify-center gap-2">
+        <span>BALAS PESAN INI KE WA KEVV 💌</span>
+        </button> -->
+
+    <footer class="mt-4 pt-3 border-t-2 border-black flex items-center justify-between text-[10px] font-black uppercase text-gray-500">
+      <span>Kevv × Mfee</span>
+      <span> - from Songkang🤍 -</span>
+    </footer>
+  </main>
+
+  <!-- File JavaScript Eksternal -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -50,6 +50,31 @@ body {
 }
 
 /* =========================================
+   ANIMASI FRAME 3 FOTO (1:1 RATIO)
+   ========================================= */
+.photo-frame {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-6px) scale(1.05) rotate(0deg) !important;
+  box-shadow: 6px 6px 0px 0px #000;
+}
+
+/* Kemiringan Polaroid Unik */
+.photo-tilt-left {
+  transform: rotate(-3deg);
+}
+
+.photo-tilt-center {
+  transform: rotate(1deg) translateY(-4px);
+}
+
+.photo-tilt-right {
+  transform: rotate(3deg);
+}
+
+/* =========================================
    ANIMASI AMPLOP 3D NEUBRUTALISM
    ========================================= */
 .envelope {
@@ -86,7 +111,6 @@ body {
   background-color: #FF85A2;
   border-top: 4px solid #000;
   border-radius: 0 0 14px 14px;
-  -webkit-clip-path: polygon(0% 100%, 50% 25%, 100% 100%);
   clip-path: polygon(0% 100%, 50% 25%, 100% 100%);
   z-index: 4;
 }
@@ -116,7 +140,6 @@ body {
   background-color: #FF69B4;
   border-bottom: 4px solid #000;
   border-radius: 14px 14px 0 0;
-  -webkit-clip-path: polygon(0% 0%, 50% 90%, 100% 0%);
   clip-path: polygon(0% 0%, 50% 90%, 100% 0%);
   transform-origin: top center;
   transition: transform 0.5s ease-in-out;
